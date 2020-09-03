@@ -42,6 +42,7 @@ Tutorials and Pro Tips to use Visual Studio Code as your main IDE.
 | Organize Imports               | `Alt+Shift+O`                    |
 | Toggle Comment                 | `Ctrl+K,Ctrl+C` or `Ctrl+§`      |
 
+
 ### TypeScript / JavaScript
 
 `(...)`
@@ -66,15 +67,18 @@ Tutorials and Pro Tips to use Visual Studio Code as your main IDE.
 
 ### Java
 
-#### Imports get discarded on save
+#### Java imports cannot be found
 
-**Problem:**
+This generally happens when the Maven project is not updated correctly:
+
+- Press `F1`
+- Select `Java: Clean the Java language server workspace`
+
+#### Imports get discarded on save
 
 This generally happens when you have enabled to organize imports on save, when parsing of the Java Source fails, the imports are discarded.
 
-**Solution:**
-
-Either only save when you are sure that your source file is valid or remove the following Setting from your `settings.json`:
+The solution is to either only save when you are sure that your source file is valid or to remove the following Setting from your `settings.json`:
 
 ```json
 "editor.codeActionsOnSave": {
